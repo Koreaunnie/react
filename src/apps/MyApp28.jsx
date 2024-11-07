@@ -1,5 +1,5 @@
 import React from "react";
-import { HStack, Input, Textarea } from "@chakra-ui/react";
+import { HStack, Icon, Input, Textarea } from "@chakra-ui/react";
 import { Field } from "../components/ui/field.jsx";
 import { Checkbox } from "../components/ui/checkbox.jsx";
 import { HiOutlinePlus } from "react-icons/hi";
@@ -10,10 +10,16 @@ import {
   RadioCardLabel,
   RadioCardRoot,
 } from "../components/ui/radio-card.jsx";
+import { FaApplePay } from "react-icons/fa6";
 
 function MyApp28(props) {
   return (
     <div style={{ margin: "10px" }}>
+      <h5>icons</h5>
+      <FaApplePay />
+
+      <hr />
+
       <h5>radio card</h5>
       <RadioCardRoot>
         <RadioCardLabel>결제 수단</RadioCardLabel>
@@ -26,6 +32,11 @@ function MyApp28(props) {
             label="삼성페이"
           ></RadioCardItem>
           <RadioCardItem
+            icon={
+              <Icon fontSize="2xl">
+                <FaApplePay />
+              </Icon>
+            }
             indicator={null}
             value="4"
             label="애플페이"
