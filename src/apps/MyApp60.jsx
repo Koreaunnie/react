@@ -1,16 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../components/ui/button.jsx";
 import axios from "axios";
+import { Field } from "../components/ui/field.jsx";
+import { Input } from "@chakra-ui/react";
 
 function MyApp60(props) {
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const handleClick = () => {
+    axios.post("/api/main1/sub3", { address: address, city: city });
+  };
+
   return (
     <div>
       <Button
         onClick={() => {
-          axios.post("", {});
+          // `{"name": "kim", "age": 33}`
+          axios.post("/api/main1/sub1", {});
         }}
       >
         btn
+      </Button>
+
+      <Button
+        onClick={() => {
+          axios.post("/api/main1/sub2", { name: "kim", age: 33 });
+        }}
+      >
+        btn2
+      </Button>
+
+      <Field label={"주소"}>
+        <Input onChange={(e) => setAddress(e.target.value)} />
+      </Field>
+
+      <Field>
+        <Input onChange={(e) => setCity(e.target.value)} />
+      </Field>
+
+      <Button onClick={handleClick} colorPalette={"blue"}>
+        전송
       </Button>
     </div>
   );
