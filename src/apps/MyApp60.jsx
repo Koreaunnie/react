@@ -31,11 +31,11 @@ function MyApp60(props) {
       </Button>
 
       <Field label={"주소"}>
-        <Input onChange={(e) => setAddress(e.target.value)} />
+        <Input onChange={(e) => setAddress(e.target.value)} value={address} />
       </Field>
 
-      <Field>
-        <Input onChange={(e) => setCity(e.target.value)} />
+      <Field label={"도시"}>
+        <Input onChange={(e) => setCity(e.target.value)} value={city} />
       </Field>
 
       <Button onClick={handleClick} colorPalette={"blue"}>
