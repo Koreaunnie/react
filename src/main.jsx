@@ -1,12 +1,14 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "./components/ui/provider.jsx";
-import MyApp54 from "./apps/MyApp54.jsx";
+import MyApp55 from "./apps/MyApp55.jsx";
+import { Toaster } from "./components/ui/toaster.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider>
-      <MyApp54 />
+      <MyApp55 />
+      <Toaster />
     </Provider>
   </StrictMode>,
 );
