@@ -3,7 +3,7 @@ import { Button } from "../components/ui/button.jsx";
 import axios from "axios";
 
 function MyApp58(props) {
-  // URLSearchParams -> Button3
+  // URLSearchParams -> Button3, Button4
   const p = new URLSearchParams();
   p.append("name", "hankang"); // name=hankang
   p.append("age", 55); // name=hankang&age=55
