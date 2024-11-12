@@ -8,7 +8,38 @@ function MyApp62(props) {
       <Button
         onClick={() => axios.post("/api/main2/sub1", { name: "kim", age: 99 })}
       >
-        btn
+        Person
+      </Button>
+
+      <Button
+        onClick={() =>
+          axios.post("/api/main2/sub2", {
+            title: "채식주의자",
+            author: "한강",
+            content: "노벨상",
+            price: 99999,
+            quantity: 100,
+          })
+        }
+      >
+        Book
+      </Button>
+
+      <Button
+        onClick={() => {
+          axios.post("api/main2/sub3", {
+            name: "kim",
+            age: 99,
+            married: true,
+            items: ["house", "car"],
+            team: {
+              name: "twins",
+              location: "seoul",
+            },
+          });
+        }}
+      >
+        Player
       </Button>
     </div>
   );
