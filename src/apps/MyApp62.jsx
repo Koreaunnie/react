@@ -41,6 +41,66 @@ function MyApp62(props) {
       >
         Player
       </Button>
+
+      <Button
+        onClick={() =>
+          axios.post("/api/main2/sub4", {
+            id: "1",
+            name: "자동차",
+            available: true,
+            shops: ["ford", "jeep"],
+            attribute: {
+              name: "suv",
+              value: "high",
+            },
+          })
+        }
+      >
+        Product
+      </Button>
+
+      <Button
+        onClick={() =>
+          axios.post("/api/main2/sub5", ["coffee", "lattee", "mocha"])
+        }
+      >
+        List-items
+      </Button>
+
+      <Button
+        onClick={() => {
+          axios.post("/api/main2/sub6", [
+            { name: "son", age: 11 },
+            { name: "han", age: 22 },
+            { name: "faker", age: 33 },
+          ]);
+        }}
+      >
+        List-people
+      </Button>
+
+      <Button
+        onClick={() =>
+          axios.post("/api/main2/sub7", [
+            {
+              title: "제목1",
+              author: "저자1",
+              price: 5000,
+              content: "소설",
+              quantity: 22,
+            },
+            {
+              title: "제목12",
+              author: "저자2",
+              price: 3000,
+              content: "sf",
+              quantity: 23,
+            },
+          ])
+        }
+      >
+        List-books
+      </Button>
     </div>
   );
 }
