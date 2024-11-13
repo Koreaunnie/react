@@ -42,7 +42,7 @@ function WholePage() {
           </Box>
         </Flex>
       </Box>
-      <hr />
+
       <Outlet />
     </Box>
   );
