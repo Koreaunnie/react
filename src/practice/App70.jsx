@@ -15,6 +15,7 @@ function App70(props) {
   return (
     <div>
       <input
+        accept={"image/*"} // 파일 형식 지정
         type={"text"}
         value={name}
         onChange={(e) => setName(e.target.value)}
