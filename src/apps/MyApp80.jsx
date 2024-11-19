@@ -43,6 +43,74 @@ function MyApp80(props) {
       >
         로그아웃
       </Button>
+
+      <hr />
+
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub4").then((res) => {
+            localStorage.setItem("token", res.data);
+          });
+        }}
+      >
+        admin
+      </Button>
+
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub5").then((res) => {
+            localStorage.setItem("token", res.data);
+          });
+        }}
+      >
+        manager
+      </Button>
+
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub6").then((res) => {
+            localStorage.setItem("token", res.data);
+          });
+        }}
+      >
+        admin & manager
+      </Button>
+
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub7", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        admin only
+      </Button>
+
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub8", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        manager only
+      </Button>
+
+      <Button
+        onClick={() => {
+          axios.get("/api/main9/sub9", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        admin or manager only
+      </Button>
     </div>
   );
 }
