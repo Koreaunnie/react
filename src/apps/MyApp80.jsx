@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 function MyApp80(props) {
   return (
@@ -110,6 +111,34 @@ function MyApp80(props) {
         }}
       >
         admin or manager only
+      </Button>
+
+      <hr />
+
+      <Button
+        onclick={() => {
+          axios.get("/api/main9/sub10", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+        }}
+      >
+        사용자 정보
+      </Button>
+
+      <Button
+        onClick={() => {
+          const token = localStorage.getItem("token");
+          const decoded = jwtDecode(token);
+          console.log(decoded);
+          console.log("id", decoded.sub);
+          console.log("권한", decoded.scope);
+          console.log("유효기간", Date(decoded.exp));
+          console.log("발행시간", Date(decoded.iat));
+        }}
+      >
+        jwt 디코딩 해서 보기
       </Button>
     </div>
   );
